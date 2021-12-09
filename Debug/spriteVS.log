@@ -1,0 +1,10 @@
+﻿  AutoSprite.cpp
+  AvoidSprite.cpp
+D:\CollegeLife\C++\big_assignment\spriteVS\spriteVS\AvoidSprite.cpp(33,14): warning C4244: “+=”: 从“double”转换到“int”，可能丢失数据
+D:\CollegeLife\C++\big_assignment\spriteVS\spriteVS\AvoidSprite.cpp(34,14): warning C4244: “+=”: 从“double”转换到“int”，可能丢失数据
+D:\CollegeLife\C++\big_assignment\spriteVS\spriteVS\AvoidSprite.cpp(54,13): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+  SpriteBase.cpp
+  UsrSprite.cpp
+  game.cpp
+  正在生成代码...
+  spriteVS.vcxproj -> D:\CollegeLife\C++\big_assignment\spriteVS\Debug\spriteVS.exe
