@@ -15,22 +15,28 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AutoSprite.cpp">
+    <ClCompile Include="aEnemy.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="AvoidSprite.cpp">
+    <ClCompile Include="aThief.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="game.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="SpriteBase.cpp">
+    <ClCompile Include="cBase.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="UsrSprite.cpp">
+    <ClCompile Include="bBoy.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="acllib.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="picture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="head.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -38,16 +44,25 @@
     <ClInclude Include="acllib.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="AutoSprite.h">
+    <ClInclude Include="aEnemy.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="AvoidSprite.h">
+    <ClInclude Include="aThief.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="SpriteBase.h">
+    <ClInclude Include="cBase.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="UsrSprite.h">
+    <ClInclude Include="bBoy.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="picture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="head.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

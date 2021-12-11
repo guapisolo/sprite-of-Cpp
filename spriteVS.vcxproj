@@ -141,18 +141,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="acllib.c" />
-    <ClCompile Include="AutoSprite.cpp" />
-    <ClCompile Include="AvoidSprite.cpp" />
+    <ClCompile Include="aEnemy.cpp" />
+    <ClCompile Include="aThief.cpp" />
     <ClCompile Include="game.cpp" />
-    <ClCompile Include="SpriteBase.cpp" />
-    <ClCompile Include="UsrSprite.cpp" />
+    <ClCompile Include="head.cpp" />
+    <ClCompile Include="picture.cpp" />
+    <ClCompile Include="cBase.cpp" />
+    <ClCompile Include="bBoy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="acllib.h" />
-    <ClInclude Include="AutoSprite.h" />
-    <ClInclude Include="AvoidSprite.h" />
-    <ClInclude Include="SpriteBase.h" />
-    <ClInclude Include="UsrSprite.h" />
+    <ClInclude Include="aEnemy.h" />
+    <ClInclude Include="aThief.h" />
+    <ClInclude Include="game.h" />
+    <ClInclude Include="head.h" />
+    <ClInclude Include="picture.h" />
+    <ClInclude Include="cBase.h" />
+    <ClInclude Include="bBoy.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="dog.bmp" />
