@@ -67,14 +67,18 @@ void cBase::RandOnBorder()
 	case 0: //up
 		x = rrand() % (r.width - width);
 		y = r.height - height;
+		break;
 	case 1: //down
 		x = rrand() % (r.width - width);
 		y = 0;
+		break;
 	case 2: //left
 		x = 0;
 		y = rrand() % (r.height - height);
+		break;
 	case 3: //right
 		x = r.width - width;
 		y = rrand() % (r.height - height);
+		break;
 	}
 }

@@ -2,5 +2,5 @@
 
 int rrand() 
 {
-	return (rand() << 15) + rand();
+	return (rand() << 15) | rand();
 }

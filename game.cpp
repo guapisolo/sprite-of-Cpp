@@ -107,6 +107,7 @@ void keyEvent(int key, int event)
 			if (usr->collision(enemy[i]))
 			{
 				usr->score += enemy[i]->score;
+				usr->hitpoint -= enemy[i]->attack;
 				delete(enemy[i]);
 				enemy[i] = NULL;
 			}
