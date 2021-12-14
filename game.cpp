@@ -10,9 +10,9 @@ void keyEvent(int key, int event);
 void paint();
 
 int nowNum = 0;
-const int maxNum = 50;
+const int maxNum = 500;
 const int winWidth = 800, winHeight = 600;
-aEnemy* enemy[maxNum] = { 0 };
+aEnemy* enemy[maxNum+5] = { 0 };
 bBoy* usr = NULL;
 
 void InitWindow()
@@ -33,9 +33,26 @@ int Setup()
 	createData(&usr);  //创建玩家
 	registerTimerEvent(timerEvent); 
 	registerKeyboardEvent(keyEvent);
-	startTimer(0, 40);
-	startTimer(1, 1000);
+	startTimer(0, 40); //每40ms移动一次
+	startTimer(1, 1000); //每1000ms生成一个怪物
 	return 0;
+}
+
+void updatemap()
+{
+	for (int i = 0; i < nowNum; ++i)
+	{
+		if (enemy[i])
+		{
+			if (usr->collision(enemy[i]))
+			{
+				usr->score += enemy[i]->score;
+				usr->hitpoint -= enemy[i]->attack;
+				delete(enemy[i]);
+				enemy[i] = NULL;
+			}
+		}
+	}
 }
 void timerEvent(int id)
 {
@@ -49,7 +66,7 @@ void timerEvent(int id)
 				rect ur = usr->getRect();
 				enemy[i]->move(ur);
 			}
-
+		updatemap();
 		break;
 	case 1:
 		if (nowNum < maxNum)
@@ -100,18 +117,6 @@ void keyEvent(int key, int event)
 {
 	if (event != KEY_DOWN)return;
 	if(usr)usr->move(key);
-	for (int i = 0; i < nowNum; ++i)
-	{
-		if (enemy[i])
-		{
-			if (usr->collision(enemy[i]))
-			{
-				usr->score += enemy[i]->score;
-				usr->hitpoint -= enemy[i]->attack;
-				delete(enemy[i]);
-				enemy[i] = NULL;
-			}
-		}
-	}
+	updatemap();
 	paint();
 }
