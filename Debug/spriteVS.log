@@ -1,2 +1,7 @@
-﻿  game.cpp
+﻿  aThief.cpp
+D:\CollegeLife\C++\big_assignment\spriteVS\spriteVS\aThief.cpp(41,27): warning C4244: “+=”: 从“double”转换到“int”，可能丢失数据
+D:\CollegeLife\C++\big_assignment\spriteVS\spriteVS\aThief.cpp(42,27): warning C4244: “+=”: 从“double”转换到“int”，可能丢失数据
+D:\CollegeLife\C++\big_assignment\spriteVS\spriteVS\aThief.cpp(67,13): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+  game.cpp
+  正在生成代码...
   spriteVS.vcxproj -> D:\CollegeLife\C++\big_assignment\spriteVS\Debug\spriteVS.exe

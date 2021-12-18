@@ -147,6 +147,7 @@
     <ClCompile Include="bWizard.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="head.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="picture.cpp" />
     <ClCompile Include="cBase.cpp" />
     <ClCompile Include="bBoy.cpp" />

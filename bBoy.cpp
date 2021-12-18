@@ -2,6 +2,7 @@
 
 int Boywidth = 70, Boyheight = 70;
 
+
 bBoy::bBoy():cBase()
 {
 	img = &IMG[ibBoy];
@@ -9,12 +10,15 @@ bBoy::bBoy():cBase()
 	x = (r.width - width) / 2, y = (r.height - height) / 2;
 	dx = 5, dy = 5;
 	hitpoint = 50, attack = 10, score = 0, level = 0;
+	attackable = 1;
 	for (int i = 0;i < 4;i++) mov[i] = 0;
 }
-//bBoy::bBoy(bBoy& sprite) :cBase(sprite)
-//{
-//	hitpoint = 50; attack = 10, score = 0;
-//}
+void bBoy::clear()
+{
+	attackable = 1; 
+	for (int i = 0;i < 4;i++) mov[i] = 0;
+	x = (r.width - width) / 2, y = (r.height - height) / 2;
+}
 bBoy::~bBoy() {}
 
 /*
@@ -34,9 +38,9 @@ void bBoy::updatelevel()
 	int dlevel = score / 10 - level;
 	if (!dlevel) return;
 	//width += dlevel * 10, height += dlevel * 10;
-	width = Boywidth + pow(dlevel, 0.7) * 10, height = Boyheight + pow(dlevel, 0.7) * 10;
-	hitpoint += dlevel * 10;
-	dx = 5 + level / 5, dy = 5 + level / 5;
+	width = Boywidth + pow(level, 0.4) * 5, height = Boyheight + pow(level, 0.4) * 5;
+	hitpoint += dlevel * 5;
+	dx = 5 + pow(level, 0.4), dy = 5 + pow(level, 0.4);
 	level = score / 10;
 }
 int bBoy::move(rect r1)

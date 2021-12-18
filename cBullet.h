@@ -14,7 +14,7 @@ public:
 	cBullet(bBoy& Master, int Type);
 	~cBullet();
 	virtual int move();
-	//virtual int collision(aEnemy* a);
+	//virtual void clear()
 };
 
 extern cBullet* bullet[5005];

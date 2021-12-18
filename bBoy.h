@@ -9,7 +9,9 @@ class bBoy :
 	public cBase
 {
 public:
-	int score, level, mov[4];
+	int score, level;
+	int mov[4];
+	int attackable;
 	bBoy();
 	bBoy(bBoy& sprite);
 	~bBoy();
@@ -19,7 +21,7 @@ public:
 	virtual int move();
 	virtual int move(rect r);
 	virtual void updatelevel();
-
+	virtual void clear();
 	//int collision(cBase*);
 };
 

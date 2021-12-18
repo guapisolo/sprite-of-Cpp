@@ -10,30 +10,30 @@ cBullet* bullet[Bullet::maxNum + 5] = { 0 };
 cBullet::cBullet(bBoy& Master, int Type) : bBoy()
 {
 	type = Type;
-	hitpoint = 1, attack = 10; master = &Master;
+	hitpoint = 1, attack = 10; master = &Master; 
 	img = &IMG[icBullet + type];
 	switch (type) {
 	case 0: //left
 		height = 16, width = 30; 
-		dx = -10, dy = 0;
+		dx = -20, dy = 0;
 		x = master->x;
 		y = (master->y + master->height / 2 - height / 2);
 		break;
 	case 1: //up
 		height = 30, width = 16;
-		dx = 0, dy = -10;
+		dx = 0, dy = -20;
 		y = master->y;
 		x = (master->x + master->width / 2 - width / 2);
 		break;
 	case 2: //right
 		height = 16, width = 30;
-		dx = 10, dy = 0;
+		dx = 20, dy = 0;
 		x = master->x + width;
 		y = (master->y + master->height / 2 - height / 2);
 		break;
 	case 3: //down
 		height = 30, width = 16;
-		dx = 0, dy = 10;
+		dx = 0, dy = 20;
 		y = master->y + height;
 		x = (master->x + master->width / 2 - width / 2);
 		break;

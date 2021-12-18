@@ -1,7 +1,7 @@
 #include "head.h"
 
 const double sq2 = sqrt(2);
-int attackable = 1;
+int task = 0;
 
 int rrand() 
 {

@@ -1,7 +1,5 @@
 #include "game.h"
 
-//int autoWidth = 100, autoHeight = 100;
-//int usrWidth = 100, usrHeight = 100;
 rect winRect;
 void timerEvent(int id);
 void createData(aEnemy **enemy);
@@ -10,8 +8,9 @@ void keyEvent(int key, int event);
 void paint();
 
 int nowNum = 0;
-const int maxNum = 500;
-const int winWidth = 800, winHeight = 600;
+const int maxNum = 1000;
+int tasknum[4] = { 60,100,150,1000 };
+const int winWidth = 1200, winHeight = 700;
 aEnemy* enemy[maxNum+5] = { 0 };
 bBoy* usr = NULL;
 
@@ -29,7 +28,6 @@ int Setup()
 	srand((unsigned)time(NULL));
 	InitWindow();
 	Initpicture();
-	createData(enemy); //创造怪物
 	createData(&usr);  //创建玩家
 	registerTimerEvent(timerEvent); 
 	registerKeyboardEvent(keyEvent);
@@ -43,17 +41,24 @@ void updatemap()
 	bBoy* tusr;
 	for (int i = 0; i < Bullet::nowNum; i++) if(bullet[i])
 	{
+		int flag = 0;
 		for (int j = 0;j < nowNum;j++) if(enemy[j]){
 			if (bullet[i]->collision(enemy[j]))
 			{
+				if (enemy[j]->hitpoint > bullet[i]->attack) {
+					enemy[j]->hitpoint -= bullet[i]->attack;
+					flag = 1;
+					break;
+				}
 				tusr = bullet[i]->master;
 				tusr->score += enemy[j]->score;
 				//tusr->hitpoint -= enemy[j]->attack;
 				delete(enemy[j]); enemy[j] = NULL;
-				delete(bullet[i]); bullet[i] = NULL;
+				flag = 1;
 				break;
 			}
 		}
+		if (flag) { delete(bullet[i]); bullet[i] = NULL;  }
 	}
 	for (int i = 0; i < nowNum; i++)
 	{
@@ -68,6 +73,38 @@ void updatemap()
 		}
 	}
 	usr->move();
+}
+void nextgeneration()
+{
+	if (task == 4) {
+		static bool gamepassprint = 0;
+		if (gamepassprint) return;
+		gamepassprint = 1;
+		char gamepasstxt[50];
+		sprintf_s(gamepasstxt, "You Win!!!\n Thank for your time. \n Your score is %d", usr->score);
+		MessageBoxA(NULL, gamepasstxt, "spirit game", MB_ICONERROR);
+		exit(0);
+		return;
+	}
+	for (int i = 0;i < Bullet::nowNum;i++) {
+		if (bullet[i]) {
+			delete(bullet[i]);
+			bullet[i] = NULL;
+		}
+	}
+	Bullet::nowNum = 0;
+	usr->clear();
+	nowNum = 0;
+}
+void checkmap()
+{
+	if (nowNum < tasknum[task]-1) return;
+	int flag = 1;
+	for (int i = 0; i < nowNum; i++)
+	{
+		if (enemy[i]) { flag = 0; break; }
+	}
+	if (flag) task++, nextgeneration();
 }
 
 void timerEvent(int id)
@@ -90,15 +127,16 @@ void timerEvent(int id)
 			}
 		usr->updatelevel();
 		updatemap();
+		checkmap();
 		break;
 	case 1:
-		if (nowNum < maxNum)
+		if (nowNum < tasknum[task])
 		{
 			createData(enemy);
 		}
 		break;
 	case 2:
-		attackable = 1; break;
+		usr->attackable = 1; break;
 	case 3:
 		usr->swapimage = 0; break;
 	}//end switch

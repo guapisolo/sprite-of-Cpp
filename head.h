@@ -5,6 +5,7 @@
 #include "picture.h"
 #include <bits/stdc++.h>  
 
+extern int task;
 extern const double sq2;
 extern const int winWidth, winHeight;
 extern int attackable;

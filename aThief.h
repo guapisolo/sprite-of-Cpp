@@ -9,13 +9,12 @@ class aThief :
 	public aEnemy
 {
 public:
-	int oldx, oldy;
+	int oldx, oldy, cwalltime;
 	bool danger(rect ur);
 	bool bfirst;
 	aThief(int score1);
 	aThief(aThief &sprite);
 	virtual ~aThief();
-
 	virtual int move(rect ur);
 };
 

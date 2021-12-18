@@ -5,13 +5,13 @@
 aBomb::aBomb(int score1) : aEnemy(score1)
 {
 	img = &IMG[iaBomb];
-	width = 100, height = 100;
+	width = 80 + task * 20, height = 80 + task * 20;
 	r.width += width, r.height += height;
-	hitpoint = 1, attack = 10; 
-	resttime = 25; boom = 0; cwalltime = 5;
+	hitpoint = 10 + task * 10, attack = 10 + task * 5;
+	resttime = 25; boom = 0; cwalltime = 4 + task * 2;
 	RandOnBorder();
 	x -= width / 2, y -= height / 2;
-	dx = rrand() % 10 + 1, dy = rrand() % 10 + 1;
+	dx = rrand() % (10 + task * 5) + 1, dy = rrand() % (10 + task) + 1;
 	if (rrand() % 2 == 0) dx *= -1;
 	if (rrand() % 2 == 0) dy *= -1;
 }

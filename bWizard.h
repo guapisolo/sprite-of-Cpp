@@ -18,6 +18,6 @@ public:
 	//virtual void move(int key,int event);
 	virtual void operate(int key,int event);
 	virtual void Attack();
-
+	virtual void clear();
 	//int collision(cBase*);
 };

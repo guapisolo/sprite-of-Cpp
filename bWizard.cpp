@@ -2,13 +2,18 @@
 
 bWizard::bWizard():bBoy()
 {
-	towards = 0;
+	towards = 0; 
 	img = &IMG[ibWizard + 2 * towards];
 	img1 = &IMG[ibWizard + 2 * towards + 1];
 }
 bWizard::~bWizard()
 {
 
+}
+void bWizard::clear()
+{
+	bBoy::clear();
+	towards = 0;
 }
 
 void bWizard::operate(int key,int event)
@@ -22,7 +27,7 @@ void bWizard::operate(int key,int event)
 	}
 	if (key == 'J' && attackable) {
 		Attack(); attackable = 0; 
-		startTimer(2, 400);
+		startTimer(2, max(100, 1000.0 / (2.5 + 1.0 * level / 30)));
 	}
 }
 
