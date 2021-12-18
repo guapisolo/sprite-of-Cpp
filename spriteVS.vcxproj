@@ -140,24 +140,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="aBomb.cpp" />
     <ClCompile Include="acllib.c" />
     <ClCompile Include="aEnemy.cpp" />
     <ClCompile Include="aThief.cpp" />
+    <ClCompile Include="bWizard.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="head.cpp" />
     <ClCompile Include="picture.cpp" />
     <ClCompile Include="cBase.cpp" />
     <ClCompile Include="bBoy.cpp" />
+    <ClCompile Include="cBullet.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="aBomb.h" />
     <ClInclude Include="acllib.h" />
     <ClInclude Include="aEnemy.h" />
     <ClInclude Include="aThief.h" />
+    <ClInclude Include="bWizard.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="head.h" />
     <ClInclude Include="picture.h" />
     <ClInclude Include="cBase.h" />
     <ClInclude Include="bBoy.h" />
+    <ClInclude Include="cBullet.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="dog.bmp" />

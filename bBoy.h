@@ -9,16 +9,18 @@ class bBoy :
 	public cBase
 {
 public:
-	int score;
+	int score, level, mov[4];
 	bBoy();
-	bBoy(bBoy &sprite);
+	bBoy(bBoy& sprite);
 	~bBoy();
 
 //	void move(int x,int y);
-	void move(int key);
-	void move(rect r);
+	virtual void operate(int key, int event);
+	virtual int move();
+	virtual int move(rect r);
+	virtual void updatelevel();
 
-	int collision(cBase*);
+	//int collision(cBase*);
 };
 
 //#endif

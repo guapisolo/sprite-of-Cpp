@@ -2,11 +2,12 @@
 #include "aThief.h"
 #include <math.h>
 
-int Thiefwidth = 100, Thiefheight = 100;
+//int Thiefwidth = 100, Thiefheight = 100;
 aThief::aThief(int score1) :aEnemy(score1)
 {
+	width = 60, height = 60;
 	img = &IMG[iaThief];
-	r.height += height, r.width += width;
+	r.width += width, r.height += height;
 	RandOnBorder();
 	x -= width / 2, y -= height / 2;
 	oldx = dx, oldy = dy;
@@ -24,7 +25,7 @@ aThief::~aThief()
 
 }
 
-void aThief::move(rect ur)
+int aThief::move(rect ur)
 {
 	if (danger(ur))
 	{
@@ -49,6 +50,7 @@ void aThief::move(rect ur)
 	if ((dy < 0) && (y < -height / 2)) y = r.height - height / 2;
 	if ((dy > 0) && (y > (r.height - height / 2))) y = -height / 2;
 
+	return 0;
 }
 bool aThief::danger(rect ur)
 {
@@ -59,6 +61,6 @@ bool aThief::danger(rect ur)
 	int ux = ur.x + ur.width / 2;
 	int uy = ur.y + ur.height / 2;
 	float dist = sqrt((cx - ux) * (cx - ux) + (cy - uy) * (cy - uy));
-	if (dist < 150) return true;
+	if (dist < 100) return true;
 	else return false;
 }

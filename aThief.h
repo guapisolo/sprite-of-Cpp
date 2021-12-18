@@ -4,7 +4,7 @@
 #pragma once
 #include "aEnemy.h"
 
-extern int Thiefwidth, Thiefheight;
+//extern int Thiefwidth, Thiefheight;
 class aThief :
 	public aEnemy
 {
@@ -16,7 +16,7 @@ public:
 	aThief(aThief &sprite);
 	virtual ~aThief();
 
-	void move(rect ur);
+	virtual int move(rect ur);
 };
 
 //#endif

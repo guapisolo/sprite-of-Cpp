@@ -22,14 +22,16 @@ public:
 	virtual ~cBase();
 
 	//随机位置生成器
-	void RandOnBorder();
+	int RandOnBorder();
 	//移动函数
-	virtual void move(rect r)=0;
+	virtual int move(rect r)=0;
 	//按指定大小绘图
 	void drawSprite(int w, int h);
 	//默认比例绘图
 	void drawSprite();
 	rect getRect();
+
+	int collision(cBase* a);
 };
 
 //#endif

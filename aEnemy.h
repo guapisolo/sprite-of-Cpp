@@ -4,7 +4,7 @@
 #pragma once
 #include "cBase.h"
 
-extern int Enemywidth, Enemyheight;
+//extern int Enemywidth, Enemyheight;
 
 class aEnemy : public cBase
 {
@@ -16,7 +16,7 @@ public:
 	aEnemy(aEnemy &sprite);
 	~aEnemy();
 
-	virtual void move(rect r);
+	virtual int move(rect r);
 };
 
 //#endif

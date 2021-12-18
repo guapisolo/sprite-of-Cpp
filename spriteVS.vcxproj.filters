@@ -39,6 +39,15 @@
     <ClCompile Include="head.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="aBomb.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="bWizard.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="cBullet.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="acllib.h">
@@ -63,6 +72,15 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="head.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="aBomb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="bWizard.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="cBullet.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -59,7 +59,7 @@ rect cBase::getRect()
 	return r;
 }
 
-void cBase::RandOnBorder()
+int cBase::RandOnBorder()
 {
 	int t = rrand() % 4;
 	switch (t)
@@ -81,4 +81,18 @@ void cBase::RandOnBorder()
 		y = rrand() % (r.height - height);
 		break;
 	}
+	return t;
+}
+
+//Åö×²ÊÂ¼ş
+int cBase::collision(cBase* a)
+{
+	rect r1 = { x,y,width,height };
+	rect r2 = { a->x,a->y,a->width,a->height };
+	int c = 1;
+	if ((r1.x < r2.x && r1.x + r1.width >r2.x) || (r1.x > r2.x && r2.x + r2.width > r1.x)) {
+		if ((r1.y > r2.y && r1.y < r2.y + r2.height) || (r1.y < r2.y && r1.y + r1.height >r2.y)) return c;
+	}
+	c = 0;
+	return c;
 }
