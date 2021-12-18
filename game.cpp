@@ -35,7 +35,6 @@ int Setup()
 	registerKeyboardEvent(keyEvent);
 	startTimer(0, 30); //每30ms移动一次
 	startTimer(1, 300); //每300ms生成一个怪物
-	//startTimer(2, 300);
 	return 0;
 }
 
@@ -99,7 +98,9 @@ void timerEvent(int id)
 		}
 		break;
 	case 2:
-		attackable = 1;
+		attackable = 1; break;
+	case 3:
+		usr->swapimage = 0; break;
 	}//end switch
 	paint();
 	//多线程

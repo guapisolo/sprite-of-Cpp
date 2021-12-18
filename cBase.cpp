@@ -2,29 +2,17 @@
 
 cBase::cBase()
 {
-	this->x = 0;
-	this->y = 0;
-	this->dx = 0;
-	this->dy = 0;
-	r = winRect;
-	this->width = 0;
-	this->height = 0;
-	this->img = NULL;
-	this->hitpoint = 10;
-	this->attack = 0;
+	x = 0, y = 0; dx = 0, dy = 0;
+	r = winRect; width = 0, height = 0;
+	hitpoint = 10, attack = 0;
+	img = img1 = NULL; swapimage = 0;
 }
-cBase::cBase(int x, int y, int dx, int dy)
+cBase::cBase(int X, int Y, int Dx, int Dy)
 {
-	this->x = x;
-	this->y = y;
-	this->dx = dx;
-	this->dy = dy;
-	r = winRect;
-	this->width = 0;
-	this->height = 0;
-	this->img = NULL;
-	this->hitpoint = 10;
-	this->attack = 0;
+	x = X, y = Y; dx = Dx, dy = Dy;
+	r = winRect; width = 0, height = 0;
+	hitpoint = 10, attack = 0;
+	img = img1 = NULL; swapimage = 0;
 }
 cBase::cBase(cBase & sprite)
 {

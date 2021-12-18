@@ -12,7 +12,8 @@ public:
 	rect r; // 限制的活动范围
 	int width, height;
 	int hitpoint, attack;
-	ACL_Image *img;
+	ACL_Image *img,*img1;
+	int swapimage;
 public:
 	//构造&析构函数
 	cBase();

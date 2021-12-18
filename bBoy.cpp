@@ -52,6 +52,7 @@ int bBoy::move(rect r1)
 
 int bBoy::move()
 {
+	if ((mov[0] ^ mov[2]) + (mov[1] ^ mov[3]) == 0) return 0;
 	if (mov[0] + mov[1] + mov[2] + mov[3] == 1) {
 		if (mov[0]) x -= dx;
 		if (mov[1]) y -= dy;
@@ -63,10 +64,15 @@ int bBoy::move()
 		if (mov[2]) x += ceil(1.0 * dx / sq2);
 		if (mov[3]) y += ceil(1.0 * dy / sq2);
 	}
-	if (x < r.x)x = r.x;
+	if (x < r.x) x = r.x;
 	if (y < 0) y = 0;
 	if (x > (r.width - width)) x = (r.width - width);
 	if (y > (r.height - height)) y = (r.height - height);
+	if (!swapimage) {
+		std::swap(img, img1);
+		swapimage = 1;
+		startTimer(3, 360);
+	}
 	return 0; 
 }
 //ÊäÈë²Ù×÷
